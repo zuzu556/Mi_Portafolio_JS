@@ -1,0 +1,132 @@
+/* Estilos generales para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(154, 186, 247);
+    color: #ff6347;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Estilo para la barra de navegación */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: rgb(121, 178, 224);
+    width: 100%;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .gif-lado img {
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  nav {
+    position: relative;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(158, 197, 255);
+    margin: 3px 0;
+  }
+  
+  .menu-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #ff6347;
+    width: 200px;
+    padding: 10px 0;
+    list-style: none;
+  }
+  
+  .menu-links li a {
+    text-decoration: none;
+    color: rgb(156, 205, 245);
+    padding: 10px;
+    display: block;
+  }
+  
+  .menu-links li a:hover {
+    background-color: #ff6347;
+  }
+  
+  /* Marquesina */
+  .marquesina {
+    width: 100%;
+    background-color: #a7c8fa;
+    padding: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .marquesina p {
+    font-size: 20px;
+    display: inline-block;
+    padding-left: 100%; /* Empuja el texto fuera de la pantalla al principio */
+    animation: desplazamiento 10s linear infinite;
+  }
+  
+  .marquesina span {
+    font-weight: bold;
+    color: #ff6347; /* Color destacado */
+  }
+  
+  /* Animación del desplazamiento de la marquesina */
+  @keyframes desplazamiento {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Estilos para la lista de detalles */
+  .detalles ul {
+    text-align: left;
+    padding: 10px;
+    list-style-type: none;
+  }
+  
+  .detalles li {
+    font-size: 18px;
+    padding: 5px 0;
+  }
+  
+  /* Estilo de la imagen de JavaScript */
+  .imagen-js img {
+    max-width: 200px;
+    margin-top: 20px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .menu-links {
+      width: 100%;
+    }
+  }
+  

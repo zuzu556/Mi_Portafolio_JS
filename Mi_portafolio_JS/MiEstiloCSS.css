@@ -1,0 +1,179 @@
+/* Eliminar cualquier espacio extra o márgenes no deseados */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefae0;
+  color: #7f5539; /* Ajustado: color válido para el texto */
+}
+
+/* ENCABEZADO Y MENÚ */
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7f5539;
+  padding: 15px 30px;
+  color: #ffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: 'montserrat', sans-serif;
+}
+
+.menu-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #7f5539;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  display: none;
+  flex-direction: column;
+  width: 200px;
+}
+
+.menu-visible {
+  display: flex !important;
+}
+
+.menu-oculto {
+  display: none !important;
+}
+
+.menu li {
+  border-bottom: 1px solid #7f5539;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  background-color: #c08a6c9f;
+}
+
+/* PORTADA */
+.portada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.portada h2 {
+
+  font-family: 'montserrat', sans-serif;
+  font-size: 36px;
+  margin: 0;
+  text-align: left;
+  color: rgb(73, 40, 40);
+  padding: 36px;
+  display: inline; /* Asegura que el fondo solo cubra el texto */
+}
+
+
+.barra-gradient h2 {
+  margin: 2;
+  font-family: 'montserrat', sans-serif;
+  font-size: 63px;
+  font-weight: left;
+  
+}
+.barra-gradient {
+  background-color: #b87958a2;
+  padding: 80px 10px;
+  color: white;
+  display: flex;
+  justify-content: left; /* alinea a la derecha */
+}
+
+.barra-gradient h2 {
+  margin: 0;
+  font-family: 'montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  max-width: 400px; /* limita el espacio ocupado */
+  text-align: start;
+}
+
+
+
+
+
+
+
+/* INFORMACIÓN PERSONAL */
+.info-gif {
+  display: grid;
+  grid-template-columns: 2fr 3fr;  /* Dos columnas de igual tamaño */
+  gap: 0px;  /* Espacio entre las columnas */
+  align-items: flex-start;  /* Alinea los elementos al fondo */
+}
+
+
+.info-personal {
+  max-width: 1100px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: left;
+  line-height: 2;
+  word-break: normal;
+}
+
+
+.gif {
+  width: 180px;  /* Ajusta el tamaño del GIF */
+  height: auto;  /* Mantén las proporciones del GIF */
+  margin-left: 500px;  /* Incrementa el margen izquierdo para mover el GIF más a la derecha */
+  margin-top: 70px; 
+}
+/* Secciones con animaciones */
+section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background-color: #7f5539;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Íconos Font Awesome */
+i {
+  color: #c08a6c9f;
+  margin-right: 10px;
+}
+
+

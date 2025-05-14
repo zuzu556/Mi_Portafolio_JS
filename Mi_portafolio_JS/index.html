@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<head>
+   
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="MiEstiloCSS.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+
+
+body {
+      margin: 0;
+      font-family: 'montserrat', sans-serif;
+    }
+
+  
+
+   
+    .menu-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-oculto {
+      display: none;
+    }
+
+    .menu-visible {
+      display: block;
+    }
+
+    .marquesina {
+      width: 100%;
+      background-color: #ddb892c4;
+      padding: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .marquesina p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: desplazamiento 10s linear infinite;
+      font-size: 15px;
+    }
+
+    @keyframes desplazamiento {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+
+   
+
+  </style>
+</head>
+</div>
+
+
+  <!-- Encabezado con título y menú -->
+  <header class="encabezado">
+    <h1> Mi Portafolio  </h1>
+
+    <button class="menu-btn"onclick="toggleMenu()">☰</button>
+    <nav class="menu">
+      <ul id="menu-list" class="menu-oculto">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Marquesina HTML</a></li>
+        <li><a href="#">Marquesina con JavaScript</a></li>
+        <li><a href="#">Carrusel Galería</a></li>
+        <li><a href="#">Mapa Interactivo</a></li>
+        <li><a href="#">Gráfica Interactiva</a></li>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="galeria_imagenes.html">Galería</a></li>
+
+      </ul>
+    </nav>
+   
+  </header>
+
+  <!-- Marquesina -->
+  <div class="marquesina">
+    <p>¡Bienvenidos a mi portafolio! <strong>Explora mis proyectos de HTML, CSS y JavaScript.</strong></p>
+  </div>
+
+  <!-- Portada con GIF y título -->
+    </h2>
+    <div class="barra-gradient">
+      <h2>Mi Portafolio HTML, CSS, JavaScript</h2>
+    </div>
+    
+  </div>
+
+  <!-- Información personal -->
+  
+  <div class="info-gif">
+    <div class="info-personal">
+      <h2>Información Personal</h2>
+      <p class="texto-info">
+      
+
+      <li>🐞-   Azul Danae Beto Chavez</li>
+      <li>👥-   Grupo</li>
+      <li>👨‍🏫-   Sanchez Magos Cesar Aalejandro</li>
+      <li>🏫-   UVM Texcoco</li>
+      <li>📅-   2024-2025</li>
+    </p>
+    </div>
+    <img src="img/cat-roll.gif" alt="Gif de un gato rodando" class="gif"/>
+
+    </div>
+    </ul>
+  </section>
+
+<script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu-list");
+      menu.classList.toggle("menu-visible");
+      menu.classList.toggle("menu-oculto");
+    }
+  </script>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico con Chart.js</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fefae0;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #cb997e;
+      margin-bottom: 40px;
+    }
+
+    .grafico-container {
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Gráfico de Visitas</h1>
+
+  <div class="grafico-container">
+    <canvas id="miGrafico"></canvas>
+  </div>
+
+  <!-- Chart.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const ctx = document.getElementById('miGrafico').getContext('2d');
+    const miGrafico = new Chart(ctx, {
+      type: 'bar', // Puedes cambiar a 'line', 'pie', etc.
+      data: {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+        datasets: [{
+          label: 'Visitas',
+          data: [12, 19, 7, 14, 9],
+          backgroundColor: [
+            '#cb997e',
+            '#ddb892',
+            '#b7b7a4',
+            '#a5a58d',
+            '#6b705c'
+          ],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrusel + Contador Automático</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fefae0;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #cb997e;
+    }
+
+    /* Carrusel */
+    .carousel-container {
+      width: 300px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-slide img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Contador */
+    .contador {
+      margin-top: 40px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #cb997e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍂 Carrusel Automático + Contador 🍂</h1>
+
+  <!-- CARRUSEL -->
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carouselSlide">
+      <img src="img6.carrusel1.jpeg" alt="Imagen 1">
+      <img src="img6.carrusel2.jpeg" alt="Imagen 2">
+      <img src="img6.carrusel3.jpeg" alt="Imagen 3">
+      <img src="img6.carrusel4.jpeg" alt="Imagen 1">
+      <img src="img6.carrusel5.jpeg" alt="Imagen 2">
+      <img src="img6.carrusel6.jpeg" alt="Imagen 3">
+    </div>
+  </div>
+
+  <!-- CONTADOR -->
+  <div class="contador">Contador: <span id="contador">0</span></div>
+
+  <script>
+    // === Carrusel Automático ===
+    const slide = document.getElementById("carouselSlide");
+    const images = slide.querySelectorAll("img");
+    let index = 0;
+
+    function moverCarrusel() {
+      index = (index + 1) % images.length;
+      slide.style.transform = `translateX(${-300 * index}px)`;
+    }
+
+    setInterval(moverCarrusel, 5000); // Cada 5 segundos
+
+    // === Contador Automático ===
+    let contador = 0;
+    const contadorSpan = document.getElementById("contador");
+
+    function aumentarContador() {
+      contador++;
+      contadorSpan.textContent = contador;
+    }
+
+    setInterval(aumentarContador, 2000); // Cada 5 segundos
+  </script>
+ 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico con Chart.js</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fefae0;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #cb997e;
+      margin-bottom: 40px;
+    }
+
+    .grafico-container {
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<section style="text-align: center; padding: 40px; background-color: #fefae0;">
+  <h2 style="color: #cb997e;"> 🐾Objetivos de Desarrollo Sostenible 🐾</h2>
+
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
+
+    <!-- Educación de calidad -->
+    <div style="text-align: center;">
+      <i class="fas fa-book-open" style="font-size: 48px; color: #6c63ff;"></i>
+      <p><strong>Educación de calidad</strong></p>
+    </div>
+
+    <!-- Acción por el clima -->
+    <div style="text-align: center;">
+      <i class="fas fa-globe" style="font-size: 48px; color: #28a745;"></i>
+      <p><strong>Acción por el clima</strong></p>
+    </div>
+
+    <!-- Salud y bienestar -->
+    <div style="text-align: center;">
+      <i class="fas fa-notes-medical" style="font-size: 48px; color: #e63946;"></i>
+      <p><strong>Salud y bienestar</strong></p>
+    </div>
+
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón Interactivo</title>
+  <style>
+    body {
+      background-color: #fefae0;
+      text-align: center;
+      padding-top: 50px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .boton-rosa {
+      background-color: #cb997e;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .boton-rosa:hover {
+      background-color: #7f5539;
+      transform: scale(1.05);
+    }
+
+    .boton-rosa:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍪 ¡Haz clic en el botón! 🍪</h1>
+
+  <button class="boton-rosa" onclick="mostrarAlerta()">Presióname</button>
+
+  <script>
+    function mostrarAlerta() {
+      alert("¡Gracias por hacer clic! 😊");
+    }
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
